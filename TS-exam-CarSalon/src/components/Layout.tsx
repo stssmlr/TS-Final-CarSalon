@@ -9,7 +9,7 @@ import {
     ProductFilled,
     UserAddOutlined
 } from '@ant-design/icons';
-import { Button, Layout, Menu, theme } from 'antd';
+import { Button, Layout, Menu, theme,Statistic  } from 'antd';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import { useAccountContext } from '../contexts/accounts.context';
 import { accountService } from '../services/accounts.service';
@@ -33,9 +33,11 @@ const AppLayout: React.FC = () => {
 
     return (
         <Layout className='AppLayout'>
-            <Sider trigger={null} collapsible collapsed={collapsed}>
-                <div className="demo-logo-vertical" />
-                <Menu
+            <Sider className='siderL' trigger={null} collapsible collapsed={collapsed}>
+                <div className="demo-logo-vertical">
+                    <img src="https://i.pinimg.com/736x/dd/fb/8e/ddfb8efbab9fb4d4931a3478ee829907.jpg" alt="" width={'200px'}/>
+                </div>
+                <Menu className='menuL'
                     theme="dark"
                     mode="inline"
                     defaultSelectedKeys={[pathname]}
@@ -59,7 +61,9 @@ const AppLayout: React.FC = () => {
                 />
             </Sider>
             <Layout className='main'>
+    
                 <Header style={{ padding: 0, background: colorBgContainer, display: "flex", justifyContent: "space-between" }}>
+                    
                     <Button
                         type="text"
                         icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
@@ -70,6 +74,7 @@ const AppLayout: React.FC = () => {
                             height: 64,
                         }}
                     />
+                    <Statistic title="Active Users" value={2} />
                     <div>
                         {
                             isAuth() ?

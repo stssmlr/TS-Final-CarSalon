@@ -1,5 +1,10 @@
 body {
   margin: 0;
+  font-family: oswald;
+  font-size: 108px;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 1;
 }
 
 .AppLayout .main {
@@ -11,3 +16,74 @@ body {
 .main .Content {
   flex-grow: 1;
 }
+
+.siderL {
+  background-color: black;
+}
+
+.menuL{
+  background-color: black;
+}
+
+.menuL :hover{
+  background-color: black;
+}
+
+.menuL .ant-menu-item{
+  background-color: black;
+  text-align: right;
+}
+
+.menuL .ant-menu-item a{
+  color: white;
+  text-align: right;
+  padding-right: 20px;
+}
+
+
+.menuL .ant-menu-item :hover{
+  background-color: #d8bc4f;
+  color: black;
+  border-radius: 8px;
+  transition: 0s;
+}
+
+.ant-menu-item-icon {
+  color: #d8bc4f;
+}
+
+.createBtn{
+  background-color: #d8bc4f;
+  color: black;
+
+}
+
+.carInfo{
+  text-align: right;
+  justify-content: right;
+  align-self: right;
+  align-content: right;
+  align-items: right;
+  flex: content;
+  justify-items: right;
+  justify-self: center;
+  display: flex;
+}
+
+.colF{
+  margin-right: 50px;
+  text-align: right ;
+}
+
+.colF h2{
+  font-size: 50px;
+  color:#d8bc4f;
+}
+.colF p{
+  font-size: 20px;
+  
+}
+
+
+
+

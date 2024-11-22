@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Button, message, Popconfirm, Space, Table, TableProps, Tag } from 'antd';
+import { Button, message, Popconfirm, Space, Table, TableProps, Tag,Col, Row } from 'antd';
 import { AppstoreAddOutlined, DeleteFilled, EditFilled, InfoCircleFilled, LikeFilled, LikeOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import { ProductModel } from '../models/products';
@@ -100,7 +100,7 @@ const ProductTable = () => {
         <>
             <div>
                 <Link to="/create">
-                    <Button type="primary" icon={<AppstoreAddOutlined />} style={{ marginBottom: '16px' }}>
+                    <Button className="createBtn" type="primary" icon={<AppstoreAddOutlined />} style={{ marginBottom: '16px' }}>
                         Create New Product
                     </Button>
                 </Link>
