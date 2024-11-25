@@ -8,12 +8,13 @@ import EditProduct from './components/EditProduct'
 import Login from './components/Login'
 import Register from './components/Register'
 import { ProtectedRoute } from './security/ProtectedRoute'
+import Home from './components/Home'
 
 function App() {
   return (
     <Routes>
       <Route path='/' element={<AppLayout />}>
-        <Route index element={<p>Home Page!</p>} />
+        <Route path='/home' element={<Home />} />
         <Route path='/products' element={<ProductTable />} />
         <Route path='/products/:id' element={<ProductInfo />} />
         <Route path='/create' element={

@@ -17,6 +17,11 @@ body {
   flex-grow: 1;
 }
 
+.main {
+
+  background-color: #d8bc4f;
+}
+
 .siderL {
   background-color: black;
 }
@@ -81,7 +86,40 @@ body {
 }
 .colF p{
   font-size: 20px;
-  
+}
+
+.divReg{
+  background-color: #ffffff;
+  background-image: url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExOWVqbXJsYzMyeTJzaXg0bmMyYTRneG5uYWJ4MzAwZnN0NmMwcDE3cyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/0CziCeUfvLnxwJW3pa/giphy.webp');
+  width: 500px;
+  height: 700px;
+  padding: 100px 50px 50px 50px;
+  margin-left: 35%;
+  margin-top: 2%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  border-radius: 15px;
+  color: #ffffff;
+}
+
+
+.divReg .ant-btn{
+  background-color: #ffffff;
+  color: black;
+}
+.checkboxReg {
+  color: #ffffff;
+}
+
+.titleHome{
+  color: #d8bc4f;
+  text-align: center;
+  font-size: 50px;
+  margin-top: 10px;
+}
+
+.carHome{
+  height: 500px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 

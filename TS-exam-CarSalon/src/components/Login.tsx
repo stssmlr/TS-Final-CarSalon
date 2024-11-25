@@ -28,48 +28,53 @@ const Login: React.FC = () => {
 
     return (
         <>
-            <h2 style={{ textAlign: "center" }}>Login Into Your Account</h2>
+        <div className='divRegOsnova'> 
+            <div className='divReg'>
+                <h2 style={{ textAlign: "center" }}>Login Into <br />CAR DELUXE</h2>
 
-            <Form
-                name="basic"
-                // labelCol={{ span: 6 }}
-                // wrapperCol={{ span: 14 }}
-                style={{ maxWidth: 600, margin: "auto" }}
-                initialValues={{ remember: true }}
-                onFinish={onFinish}
-                autoComplete="off"
-                layout="vertical"
-            >
-                <Form.Item<LoginField>
-                    label="Email"
-                    name="email"
-                    rules={[{ required: true, message: 'Please input your username!' }]}
+                <Form
+                    name="basic"
+                    // labelCol={{ span: 6 }}
+                    // wrapperCol={{ span: 14 }}
+                    style={{ maxWidth: 600, margin: "auto" }}
+                    initialValues={{ remember: true }}
+                    onFinish={onFinish}
+                    autoComplete="off"
+                    layout="vertical"
                 >
-                    <Input />
-                </Form.Item>
+                    <Form.Item<LoginField>
+                        label="Email"
+                        name="email"
+                        rules={[{ required: true, message: 'Please input your username!' }]}
+                    >
+                        <Input />
+                    </Form.Item>
 
-                <Form.Item<LoginField>
-                    label="Password"
-                    name="password"
-                    rules={[{ required: true, message: 'Please input your password!' }]}
-                >
-                    <Input.Password />
-                </Form.Item>
+                    <Form.Item<LoginField>
+                        label="Password"
+                        name="password"
+                        rules={[{ required: true, message: 'Please input your password!' }]}
+                    >
+                        <Input.Password />
+                    </Form.Item>
 
-                <Form.Item<LoginField>
-                    name="remember"
-                    valuePropName="checked"
-                    style={{ textAlign: "center" }}
-                >
-                    <Checkbox>Remember me</Checkbox>
-                </Form.Item>
+                    <Form.Item<LoginField>
+                        name="remember"
+                        valuePropName="checked"
+                        style={{ textAlign: "center" }}
+                    >
+                        <Checkbox className='checkboxReg'>Remember me</Checkbox>
+                    </Form.Item>
 
-                <Form.Item style={{ textAlign: "center" }}>
-                    <Button type="primary" htmlType="submit">
-                        Submit
-                    </Button>
-                </Form.Item>
-            </Form>
+                    <Form.Item style={{ textAlign: "center" }}>
+                        <Button type="primary" htmlType="submit">
+                            Submit
+                        </Button>
+                    </Form.Item>
+                </Form>
+            </div>
+        </div>
+            
         </>
     )
 };
