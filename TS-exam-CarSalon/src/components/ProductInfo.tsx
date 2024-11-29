@@ -2,7 +2,7 @@ import { LeftOutlined } from '@ant-design/icons';
 import { Image, Tag, Flex, Skeleton, Space, Button, Col, Row  } from 'antd';
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
-import { ProductModel } from '../models/products';
+import { ProductModel } from '../models/cars';
 
 const productsApi = import.meta.env.VITE_PRODUCTS_API;
 

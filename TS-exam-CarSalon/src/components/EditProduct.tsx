@@ -12,7 +12,7 @@ import {
 } from 'antd';
 import { useNavigate, useParams } from 'react-router-dom';
 import { CategoryModel, CategoryOption } from '../models/categories';
-import { ProductFormFields } from '../models/products';
+import { ProductFormFields } from '../models/cars';
 
 type QueryParams = {
     id: string;

@@ -45,7 +45,7 @@ const AppLayout: React.FC = () => {
                         {
                             key: '/',
                             icon: <HomeFilled />,
-                            label: <Link to="/home">Home</Link>,
+                            label: <Link to="/">Home</Link>,
                         },
                         {
                             key: '/products',

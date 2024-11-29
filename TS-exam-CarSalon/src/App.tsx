@@ -14,7 +14,7 @@ function App() {
   return (
     <Routes>
       <Route path='/' element={<AppLayout />}>
-        <Route path='/home' element={<Home />} />
+        <Route index element={<Home />} />
         <Route path='/products' element={<ProductTable />} />
         <Route path='/products/:id' element={<ProductInfo />} />
         <Route path='/create' element={
@@ -23,7 +23,7 @@ function App() {
           </ProtectedRoute>
         } />
         <Route path='/login' element={<Login />} />
-        <Route path='/register' element={<Register />} />
+        <Route path='/register' element={<Register />} />-
         <Route path='/edit/:id' element={<EditProduct />} />
         <Route path='*' element={<p>Page Not Found!</p>} />
       </Route>

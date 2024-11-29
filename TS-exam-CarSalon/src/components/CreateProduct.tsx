@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { LeftOutlined, UploadOutlined } from '@ant-design/icons';
+import { LeftOutlined } from '@ant-design/icons';
 import {
     Button,
     Form,
@@ -9,18 +9,18 @@ import {
     message,
     Select,
     Space,
-    Upload,
+
 } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import { CategoryModel, CategoryOption } from '../models/categories';
-import { ProductFormFields } from '../models/products';
-import axios from 'axios';
+import { ProductFormFields } from '../models/cars';
+
 
 const { TextArea } = Input;
 
-const normFile = (e: any) => {
-    return e?.file.originFileObj;
-};
+// const normFile = (e: any) => {
+//     return e?.file.originFileObj;
+// };
 
 const productsApi = import.meta.env.VITE_PRODUCTS_API;
 
@@ -38,22 +38,26 @@ const CreateProduct = () => {
 
     const onSubmit: FormProps<ProductFormFields>['onFinish'] = (item) => {
         console.log(item);
-
-        const form = new FormData();
-
-        for (const key in item) {
-            form.append(key, (item as any)[key]);
-        }
-
-        axios.post(productsApi, form).then(res => {
+        // TODO: upload to server
+        fetch(productsApi, {
+            method: "POST",
+            body: JSON.stringify(item),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            }
+        }).then(res => {
             if (res.status === 200) {
                 message.success("Product created successfuly!");
                 navigate(-1);
             }
-        }).catch(err => {
-            console.log(err);
+            else {
+                res.json().then(res => {
+                    const msg = res.errors[Object.keys(res.errors)[0]][0];
+                    message.error(msg);
+                })
+            }
+        })
 
-        });
     }
     return (
         <>
@@ -94,14 +98,14 @@ const CreateProduct = () => {
                 <Form.Item<ProductFormFields> label="Description" name="description">
                     <TextArea rows={4} />
                 </Form.Item>
-                <Form.Item<ProductFormFields> label="Image" name="image" valuePropName="file" getValueFromEvent={normFile}>
+                {/* <Form.Item<ProductFormFields> label="Image" name="image" valuePropName="file" getValueFromEvent={normFile}>
                     <Upload maxCount={1}>
                         <Button icon={<UploadOutlined />}>Click to Upload</Button>
                     </Upload>
-                </Form.Item>
-                {/* <Form.Item<ProductFormFields> label="Image" name="imageUrl">
-                    <Input />
                 </Form.Item> */}
+                <Form.Item<ProductFormFields> label="Image" name="imageUrl">
+                    <Input />
+                </Form.Item>
                 <Form.Item
                     wrapperCol={{
                         offset: 4,
